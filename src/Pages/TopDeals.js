@@ -1,11 +1,8 @@
 import React from 'react'
 import "../styles/Home.css"
-import { Fugulist } from '../List/Fugu';
 import { useState,useEffect } from 'react';
-import { Kentelist } from '../List/Kente';
-import { Africanprintlist } from '../List/African';
 import { useShoppingCart } from '../Context/ShoppingCartContext';
-
+import { List } from '../List/List';
 
 function TopDeals() {
 
@@ -15,8 +12,8 @@ function TopDeals() {
     const now = Date.now();
 
     // If there's no saved items or last update, or it's been more than 3 hours since the last update
-    if (!savedItems || !lastUpdate || now - lastUpdate > 1800000) {
-      const newItems = [...Randomlist(Africanprintlist, 3), ...Randomlist(Fugulist, 3), ...Randomlist(Kentelist, 3)];
+    if (!savedItems || !lastUpdate || now - lastUpdate > 5000) {
+      const newItems = [...Randomlist(List, 9)];
       window.localStorage.setItem('discountItems', JSON.stringify(newItems));
       window.localStorage.setItem('lastUpdate', now);
       return newItems;
@@ -28,11 +25,11 @@ function TopDeals() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const newItems = [...Randomlist(Africanprintlist, 3), ...Randomlist(Fugulist, 3), ...Randomlist(Kentelist, 3)];
+      const newItems = [...Randomlist(List, 9)];
       setDiscount(newItems);
       window.localStorage.setItem('discountItems', JSON.stringify(newItems));
       window.localStorage.setItem('lastUpdate', Date.now());
-    }, 1800000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -43,12 +40,12 @@ function TopDeals() {
   }
   return (
     <div className='topdeals'>
-    {discount.map((topitem) => {
+    {discount.filter((item)=>{ return (item.id.slice(0, 2) === "fg" || item.id.slice(0, 2) === "af" || item.id.slice(0, 2) === "kt")}).map((item) => {
       return(<TopItem 
-        Id={topitem.id}
-        name={topitem.name}
-        image={topitem.image}
-        price={topitem.price }
+        Id={item.id}
+        name={item.name}
+        image={item.image}
+        price={item.price }
       
       />)
     })}

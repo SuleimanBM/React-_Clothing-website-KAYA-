@@ -94,4 +94,13 @@
     color: white;
     background-color: rgb(1, 1, 37);
 }
+#infO {
+    width: 100px;
+    height: 30px;
+    color: white;
+    border: 2px solid gold;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+}
 

@@ -5,6 +5,7 @@
     border-bottom: 3px solid gold;
     display: flex;
     flex-direction: row;
+    
 }
 .navbar img {
     width: 100px;
@@ -19,6 +20,7 @@
     align-items: center;
     justify-items: space-between;
     color: gold;
+    
 }
 .navbar .rightside {
     flex: 100%;
@@ -28,7 +30,7 @@
     justify-content: flex-end;
 }
 .navbar a {
-    width: 100px;
+    width: 70px;
     height: 80%;
     border: 2px solid gold; 
     border-radius: 10px;

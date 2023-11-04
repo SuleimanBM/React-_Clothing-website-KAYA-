@@ -10,11 +10,15 @@ export function useShoppingCart() {
 export function ShoppingCartProvider({ children}) {
     const [cartItems, setCartItems] = useState([])
 
+    const cartQuantity =  cartItems.reduce(
+        (quantity, item) => item.quantity + quantity, 0
+    )
+
     function getItemQuantity(key){
         return cartItems.find(item => item.key === key)?.quantity || 0
     }
 
-    function increaseCartQuantity(key){
+ function increaseCartQuantity(key){
         setCartItems(currItems => {
             if (currItems.find(item => item.key == key) == null) {
                 return [...currItems, {key, quantity: 1}]
@@ -58,6 +62,8 @@ export function ShoppingCartProvider({ children}) {
          increaseCartQuantity, 
          decreaseCartQuantity,
          removeFromCart, 
+         cartQuantity,
+         cartItems,
          }}>
         {children
         }
