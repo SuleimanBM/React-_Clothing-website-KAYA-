@@ -2,7 +2,7 @@ import React from 'react'
 
 function accessories() {
   return (
-    <div>accessories</div>
+    <div><h1>PENDING</h1></div>
   )
 }
 

@@ -57,7 +57,7 @@ export const Fugulist = [
         id: "fg007",
     },
     {
-        name:"Women's sleeveless fugu - Blueblack/Yellow",
+        name:"Women's sleeveless fugu - Navy/Yellow",
         image:Blueblackyellow_f,
         price:399.99,
         id: "fg008",
@@ -69,19 +69,19 @@ export const Fugulist = [
         id: "fg009",
     },
     {
-        name:"Men's fugu with sleeve + cap - Grey/Yellow",
+        name:"Men's fugu with sleeve - Grey/Yellow",
         image:Greyyellow_m,
         price:319.99,
         id: "fg010",
     },
     {
-        name:"Men's fugu with sleeve + cap - Navy/Blue/Yellow",
+        name:"Men's fugu with sleeve - Blue/Yellow",
         image:Navyyellow_m,
         price:349.99,
         id: "fg011",
     },
     {
-        name:"Men's fugu with sleeve + cap - Green with stripe",
+        name:"Men's fugu with sleeve - Green/Brown",
         image:Greenstriped_m,
         price:469.99,
         id: "fg012",
@@ -93,7 +93,7 @@ export const Fugulist = [
         id: "fg013",
     },
     {
-        name:"Men's fugu with sleeves + cap - Yellow/Red/Pink",
+        name:"Men's fugu with sleeves - Yellow/Red",
         image:Yellowred_m,
         price:449.99,
         id: "fg014",

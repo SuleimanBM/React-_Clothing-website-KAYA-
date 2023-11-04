@@ -35,151 +35,181 @@ export const Africanprintlist = [
         image:Print_001,
         price:200,
         id: "af001",
+        name: "African Print"
     },
     {
         image:Print_002,
         price:360,
         id: "af002",
+        name: "African Print"
     },
     {
         image:Print_021,
         price:380,
         id: "af003",
+        name: "African Print"
     },
     {
         image:Print_003,
         price:330,
         id: "af004",
+        name: "African Print"
     },
     {
         image:Print_004,
         price:310,
         id: "af005",
+        name: "African Print"
     },
     {
         image:Print_022,
         price:299,
         id: "af006",
+        name: "African Print"
     },
     {
         image:Print_005,
         price:350,
         id: "af007",
+        name: "African Print"
     },
     {
         image:Print_006,
         price:277,
         id: "af008",
+        name: "African Print"
     },
     {
         image:Print_023,
         price:200,
         id: "af009",
+        name: "African Print"
     },
     {
         image:Print_007,
         price:215,
         id: "af010",
+        name: "African Print"
     },
     {
         image:Print_008,
         price:250,
         id: "af011",
+        name: "African Print"
     },
     {
         image:Print_024,
         price:250,
         id: "af012",
+        name: "African Print"
     },
     {
         image:Print_009,
         price:285,
         id: "af013",
+        name: "African Print"
     },
     {
         image:Print_010,
         price:290,
         id: "af014",
+        name: "African Print"
     },
     {
         image:Print_025,
         price:270,
         id: "af015",
+        name: "African Print"
     },
     {
         image:Print_011,
         price:230,
         id: "af016",
+        name: "African Print"
     },
     {
         image:Print_012,
         price:235,
         id: "af017",
+        name: "African Print"
     },
     {
         image:Print_026,
         price:280,
         id: "af018",
+        name: "African Print"
     },
     {
         image:Print_013,
         price:200,
         id: "af019",
+        name: "African Print"
     },
     {
         image:Print_014,
         price:320,
         id: "af020",
+        name: "African Print"
     },
     {
         image:Print_027,
         price:217,
         id: "af021",
+        name: "African Print"
     },
     {
         image:Print_015,
         price:300,
         id: "af022",
+        name: "African Print"
     },
     {
         image:Print_016,
         price:220,
         id: "af023",
+        name: "African Print"
     },
     {
         image:Print_028,
         price:265,
         id: "af024",
+        name: "African Print"
     },
     {
         image:Print_017,
         price:200,
         id: "af025",
+        name: "African Print"
     },
     {
         image:Print_018,
         price:225,
         id: "af026",
+        name: "African Print"
     },
     {
         image:Print_029,
         price:270,
         id: "af027",
+        name: "African Print"
     },
     {
         image:Print_019,
         price:180,
         id: "af028",
+        name: "African Print"
     },
     {
         image:Print_020,
         price:300,
         id: "af029",
+        name: "African Print"
     },
     {
         image:Print_030,
         price:200,
         id: "af030",
+        name: "African Print"
     },
 
 ]

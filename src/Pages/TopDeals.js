@@ -4,6 +4,7 @@ import { Fugulist } from '../List/Fugu';
 import { useState,useEffect } from 'react';
 import { Kentelist } from '../List/Kente';
 import { Africanprintlist } from '../List/African';
+import { useShoppingCart } from '../Context/ShoppingCartContext';
 
 
 function TopDeals() {
@@ -14,7 +15,7 @@ function TopDeals() {
     const now = Date.now();
 
     // If there's no saved items or last update, or it's been more than 3 hours since the last update
-    if (!savedItems || !lastUpdate || now - lastUpdate > 10000) {
+    if (!savedItems || !lastUpdate || now - lastUpdate > 1800000) {
       const newItems = [...Randomlist(Africanprintlist, 3), ...Randomlist(Fugulist, 3), ...Randomlist(Kentelist, 3)];
       window.localStorage.setItem('discountItems', JSON.stringify(newItems));
       window.localStorage.setItem('lastUpdate', now);
@@ -31,7 +32,7 @@ function TopDeals() {
       setDiscount(newItems);
       window.localStorage.setItem('discountItems', JSON.stringify(newItems));
       window.localStorage.setItem('lastUpdate', Date.now());
-    }, 10000);
+    }, 1800000);
 
     return () => clearInterval(interval);
   }, []);
@@ -44,7 +45,7 @@ function TopDeals() {
     <div className='topdeals'>
     {discount.map((topitem) => {
       return(<TopItem 
-        key={topitem.id}
+        Id={topitem.id}
         name={topitem.name}
         image={topitem.image}
         price={topitem.price }
@@ -56,30 +57,33 @@ function TopDeals() {
 
 }
 
-function TopItem ({image, name,price}){
-  const bool = false;
-  const [button, setButton] = useState(bool)
-  const buttonAppear = () =>{
-    setButton(!bool)
-  }
-  const butoonDisappear = () => {
-    setButton(bool)
-  }
+function TopItem ({Id, image, name,price}){
+  const {getItemQuantity,
+    increaseCartQuantity, 
+    decreaseCartQuantity,
+    removeFromCart,} = useShoppingCart()
+  const quantity =  getItemQuantity(Id);
+  
   return (
-    <div>
-    <div className='topitem' onMouseOver={buttonAppear} onMouseOut={butoonDisappear}>
+   
+    <div className='topitem'>
   <div style={{backgroundImage: `url(${image})`}}></div>
     <div >
     <p ><b>{name}</b></p>
-  <span  style={{display: 'block'}}> <p style={{display: 'inline',textDecoration: "line-through", color: "red"}} >GHC {price}</p> <h4 style={{display: 'inline'}}>GHC {(price * 0.8).toFixed(2)}</h4> </span>
-  {button && <div><button id="info">ADD TO CART</button></div>}
-    </div>
- 
+  <h4><span style={{textDecoration: "line-through", color: "red"}}>GHC {price}</span  > GHC {(price * 0.8).toFixed(2)}</h4>
+  
+    {quantity === 0 ? (
+    <button id="Info" onClick={() => increaseCartQuantity(Id)}>ADD TO CART</button>
+    ) : (
+      <div>
+        <button id='info'  onClick={ quantity === 1 ? () => removeFromCart(Id) : () => decreaseCartQuantity(Id)}>-</button>
+        <span><b>{quantity}</b></span> <b>in cart</b>
+        <button id='info' onClick={() => increaseCartQuantity(Id)}>+</button>
+      </div>
+    )}
     
-    </div>
+    </div>   
     </div>
 )
-  
 }
-
 export default TopDeals

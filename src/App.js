@@ -11,12 +11,13 @@ import kente from './Pages/kente';
 import africanprint from './Pages/africanprint';
 import accessories from './Pages/accessories'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ShoppingCartProvider } from './Context/ShoppingCartContext';
 
 function App() {
   return (
     <div className='App'>
-      
-      <Router>
+      <ShoppingCartProvider>
+     <Router>
         <Navbar />
         <Routes>
           <Route path='/' exact Component={Home}>
@@ -30,10 +31,9 @@ function App() {
           <Route path='/About' exact Component={About} />
           <Route path='/Contact' exact Component={Contact} />
         </Routes>
-        <Footer />
+     <Footer />
       </Router>
-      
-   
+      </ShoppingCartProvider>
     </div>
   );
 }
