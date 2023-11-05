@@ -4,43 +4,43 @@ import "../styles/Home.css"
 import { useState } from 'react'
 function Homebar() {
   const bool = true
-  const bool1 = true
-  const bool2 = true
-  const bool3 = true
-  const bool4 = true
+  const bool1 = false
+  const bool2 = false
+  const bool3 = false
+  const bool4 = false
   const [activeLink, setactiveLink] = useState(bool)
   const ActiveLink = () => {
     setactiveLink(bool);
-    setactiveLink1(!bool1);setactiveLink2(!bool2)
-    setactiveLink4(!bool3);setactiveLink3(!bool4)
+    setactiveLink1(bool1);setactiveLink2(bool2)
+    setactiveLink4(bool3);setactiveLink3(bool4)
     }
 
   const [activeLink1, setactiveLink1] = useState(bool1)
   const ActiveLink1 = () => {
-    setactiveLink(!bool);setactiveLink1(bool1);
-    setactiveLink2(!bool2);setactiveLink3(!bool3);
-    setactiveLink4(!bool4)
+    setactiveLink(!bool);setactiveLink1(!bool1);
+    setactiveLink2(bool2);setactiveLink3(bool3);
+    setactiveLink4(bool4)
     }
 
   const [activeLink2, setactiveLink2] = useState(bool2)
   const ActiveLink2 = () => {
-    setactiveLink(!bool);setactiveLink1(!bool1);
-    setactiveLink2(bool2);setactiveLink3(!bool3);
-    setactiveLink4(!bool4)
+    setactiveLink(!bool);setactiveLink1(bool1);
+    setactiveLink2(!bool2);setactiveLink3(bool3);
+    setactiveLink4(bool4)
     }
 
   const [activeLink3, setactiveLink3] = useState(bool3)
   const ActiveLink3 = () => {
-    setactiveLink(!bool);setactiveLink1(!bool1);
-    setactiveLink2(!bool2);setactiveLink3(bool3);
-    setactiveLink4(!bool4)
+    setactiveLink(!bool);setactiveLink1(bool1);
+    setactiveLink2(bool2);setactiveLink3(!bool3);
+    setactiveLink4(bool4)
     }
 
   const [activeLink4, setactiveLink4] = useState(bool4)
   const ActiveLink4 = () => {
-    setactiveLink(!bool);setactiveLink1(!bool1);
-    setactiveLink2(!bool2);setactiveLink3(!bool3);
-    setactiveLink4(bool4)
+    setactiveLink(!bool);setactiveLink1(bool1);
+    setactiveLink2(bool2);setactiveLink3(bool3);
+    setactiveLink4(!bool4)
     }
  
   return (

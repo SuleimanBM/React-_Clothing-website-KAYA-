@@ -12,7 +12,7 @@ function TopDeals() {
     const now = Date.now();
 
     // If there's no saved items or last update, or it's been more than 3 hours since the last update
-    if (!savedItems || !lastUpdate || now - lastUpdate > 5000) {
+    if (!savedItems || !lastUpdate || now - lastUpdate > 1800000) {
       const newItems = [...Randomlist(List, 9)];
       window.localStorage.setItem('discountItems', JSON.stringify(newItems));
       window.localStorage.setItem('lastUpdate', now);
@@ -29,7 +29,7 @@ function TopDeals() {
       setDiscount(newItems);
       window.localStorage.setItem('discountItems', JSON.stringify(newItems));
       window.localStorage.setItem('lastUpdate', Date.now());
-    }, 5000);
+    }, 1800000);
 
     return () => clearInterval(interval);
   }, []);

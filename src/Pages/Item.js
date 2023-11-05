@@ -6,7 +6,7 @@ function Item({Id, image,name,price}) {
           increaseCartQuantity, 
           decreaseCartQuantity,
           removeFromCart,} = useShoppingCart()
-        const quantity =  getItemQuantity(Id);
+        const quantity = getItemQuantity(Id);
         
         return (
          
