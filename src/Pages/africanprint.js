@@ -9,7 +9,7 @@ import { List } from '../List/List';
 
 function africanprint() {
   return (
-    <div className='africanprint'>
+    <div className=' w-screen h-auto flex flex-row flex-wrap justify-around'>
       {List.filter((item)=>{ return (item.id.slice(0, 2) === "af")}).map((item) => {
         return (<Item 
         Id={item.id}

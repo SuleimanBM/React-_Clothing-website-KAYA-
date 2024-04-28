@@ -16,17 +16,17 @@ export function ShoppingCartProvider({ children}) {
        function cartTotal (){return(
         cartItems.reduce((total, item) => total + item.quantity * item.price,0)
        )}
-    function getItemQuantity(Id){
-        return cartItems.find(item => item.Id === Id)?.quantity || 0
+    function getItemQuantity(id){
+        return cartItems.find(item => item.id === id)?.quantity || 0
     }
 
- function increaseCartQuantity(Id){
+ function increaseCartQuantity(id){
         setCartItems(currItems => {
-            if (currItems.find(item => item.Id == Id) == null) {
-                return [...currItems, {Id, quantity: 1}]
+            if (currItems.find(item => item.id == id) == null) {
+                return [...currItems, {id, quantity: 1}]
             }else {
                 return currItems.map(item => {
-                    if(item.Id === Id) {
+                    if(item.id === id) {
                         return { ...item, quantity: item.quantity + 1 }
                     }else {
                         return item
@@ -36,13 +36,13 @@ export function ShoppingCartProvider({ children}) {
         })
     }
 
-    function decreaseCartQuantity(Id){
+    function decreaseCartQuantity(id){
         setCartItems(currItems => {
-            if (currItems.find(item => item.Id == Id) === 1) {
-                return currItems.filter(item => item.Id !== Id)
+            if (currItems.find(item => item.id == id) === 1) {
+                return currItems.filter(item => item.id !== id)
             }else {
                 return currItems.map(item => {
-                    if(item.Id === Id) {
+                    if(item.id === id) {
                         return { ...item, quantity: item.quantity - 1 }
                     }else {
                         return item
@@ -52,9 +52,9 @@ export function ShoppingCartProvider({ children}) {
         })
     }
 
-    function removeFromCart(Id){
+    function removeFromCart(id){
         setCartItems(currItems => {
-            return currItems.filter(item => item.Id !==Id)
+            return currItems.filter(item => item.id !==id)
         })
     }
 

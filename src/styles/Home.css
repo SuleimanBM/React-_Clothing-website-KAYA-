@@ -4,7 +4,7 @@
     
 }
 .Homebar  #active {
-    height: 90%;
+    height: 55px;
     width: 140px;
     border-radius: 10px;
     border:2px solid rgb(6, 6, 90);
@@ -14,7 +14,7 @@
 }
 
  .Homebar  #unactive{
-    height: 90%;
+    height: 55px;
     width: 140px;
     border-radius: 10px;
     border:2px solid rgb(6, 6, 90);
@@ -53,7 +53,7 @@
     place-items: center;
     gap: auto;
 }
-.fugu ,.KenteItem, .APItem, .topitem{
+.fugu{
     border: 2px solid rgb(6, 6, 90);
     border-radius: 15px;
     width: 300px;

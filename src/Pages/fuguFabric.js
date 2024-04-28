@@ -6,7 +6,7 @@ import { List } from '../List/List'
 
 function fuguFabric() {
   return (
-    <div className='fuguFabric'>
+    <div className=' w-full h-auto flex flex-row flex-wrap justify-around'>
     
       {List.filter((item)=>{ return (item.id.slice(0, 2) === "fg")}).map((item) => {
         return (<Item 

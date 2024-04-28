@@ -7,7 +7,7 @@ import { useShoppingCart } from '../Context/ShoppingCartContext';
 
 function kente() {
   return (
-    <div className='kente'>
+    <div className=' w-full h-auto flex flex-row flex-wrap justify-around '>
       {List.filter((item)=>{ return (item.id.slice(0, 2) === "kt")}).map((item) => {
         return(<Item
           Id={item.id}

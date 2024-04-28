@@ -2,7 +2,9 @@ import React from 'react'
 
 function contact() {
   return (
-    <h1>Contact</h1>
+    <div className=' min-h-screen'>
+      <h1 className=' text-white text-4xl'>Contact</h1>
+    </div>
   )
 }
 
